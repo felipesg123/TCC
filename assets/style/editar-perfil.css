@@ -1,0 +1,249 @@
+/* Estilos Gerais */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #907FD8;
+    min-height: 100vh;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Seção de Edição */
+.edit-profile-section {
+    background: #3A0F7A;
+    min-height: 100vh;
+    padding: 20px 30px;
+}
+
+/* Header */
+.header-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-title {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.spacer {
+    width: 120px; /* Mesma largura do botão voltar para centralizar o título */
+}
+
+/* Botão Voltar */
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: white;
+    color: #3A0F7A;
+}
+
+.back-btn .svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* Container de Edição */
+.edit-container {
+    background: white;
+    border-radius: 30px;
+    padding: 40px 30px;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+/* Seção da Foto de Perfil */
+.profile-pic-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-pic-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #c4c4c4;
+    margin: 0 auto 15px;
+    cursor: pointer;
+    overflow: hidden;
+    border: 4px solid #907FD8;
+}
+
+#profilePic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-pic-wrapper .upload-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.profile-pic-wrapper:hover .upload-label {
+    opacity: 1;
+    background-color: rgba(144, 127, 216, 0.7);
+}
+
+.upload-icon {
+    width: 40px;
+    height: 40px;
+    fill: white;
+}
+
+.upload-text {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Formulário */
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #333;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.form-group input {
+    padding: 15px;
+    border: 2px solid #E0E0E0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background-color: #f8f8f8;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #907FD8;
+    background-color: white;
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+/* Ações do Formulário */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.cancel-btn {
+    background-color: #f8f8f8;
+    color: #333;
+    border: 2px solid #E0E0E0;
+    padding: 15px 25px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background-color: #E0E0E0;
+    border-color: #ccc;
+}
+
+.save-btn {
+    background-color: #3A0F7A;
+    color: white;
+    border: 2px solid #3A0F7A;
+    padding: 15px 25px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+    background-color: #2A076E;
+    border-color: #2A076E;
+}
+
+/* Ajustes para Mobile */
+@media (max-width: 768px) {
+    .edit-profile-section {
+        padding: 15px;
+    }
+
+    .header-buttons {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .page-title {
+        order: -1;
+        font-size: 1.5rem;
+    }
+
+    .spacer {
+        display: none;
+    }
+
+    .back-btn {
+        align-self: flex-start;
+    }
+
+    .edit-container {
+        padding: 30px 20px;
+        margin: 0 10px;
+    }
+
+    .profile-pic-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .cancel-btn, .save-btn {
+        width: 100%;
+    }
+}

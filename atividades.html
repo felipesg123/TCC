@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dicionário Online - Atividades</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon/logo_topo.svg">
+
+  <!-- Ícones Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Estilo principal -->
+  <link rel="stylesheet" href="assets/style/atividades.css">
+</head>
+<body>
+
+  <!-- ======================================================
+       CABEÇALHO PRINCIPAL
+       ====================================================== -->
+  <header class="main-header">
+    <a href="index.html" class="home-btn" aria-label="Voltar à página inicial">
+      <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <div class="header-actions">
+      <button id="filter-btn" class="filter-btn" aria-label="Abrir filtros" aria-expanded="false">
+        <i class="fas fa-filter"></i>
+        <span>Filtro</span>
+        <i class="fas fa-chevron-down arrow-down"></i>
+      </button>
+
+      <button class="button" onclick="localStorage.setItem('origemDicionario', 'atividade'); window.location.href='dicinario.html'">
+        <i class="fas fa-search"></i>
+        <span>Pesquisar no Dicionário</span>
+      </button>
+
+      <a href="login.html" class="user-profile-btn">
+        <img src="assets/icon/user_icon.png" alt="Foto do usuário" class="user-avatar">
+      </a>
+    </div>
+  </header>
+
+  <!-- ======================================================
+       SEÇÃO DE FILTROS
+       ====================================================== -->
+  <section id="filters-section" class="filters hidden">
+    <div class="filter-group">
+      <label for="category-filter">Categoria:</label>
+      <select id="category-filter">
+        <option value="all">Todas</option>
+        <option value="alfabetizacao">Alfabetização</option>
+        <option value="matematica">Matemática</option>
+        <option value="cidadania">Cidadania</option>
+        <option value="leitura">Leitura</option>
+        <option value="escrita" selected>Escrita</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="difficulty-filter">Dificuldade:</label>
+      <select id="difficulty-filter">
+        <option value="all">Todas</option>
+        <option value="iniciante">Iniciante</option>
+        <option value="intermediario">Intermediário</option>
+        <option value="avancado" selected>Avançado</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       CARD DE DESTAQUE CENTRALIZADO
+       ====================================================== -->
+  <main class="main-content">
+    <div class="featured-wrapper">
+      <a href="gramatica.html" class="featured-card" aria-label="Abrir atividade de redação">
+        <div class="featured-icon">
+          <i class="fas fa-edit"></i>
+        </div>
+        <div class="featured-info">
+          <h2>Redação para Treino Ortográfico</h2>
+          <p>Pratique escrita com desafios surpresa e receba correções em tempo real.</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- ======================================================
+         CARDS DE ATIVIDADES
+         ====================================================== -->
+    <section class="cards-section">
+      <div id="activities-container" class="cards-container"></div>
+      <div id="no-results" class="no-results">Nenhum resultado encontrado.</div>
+    </section>
+  </main>
+
+  <!-- ======================================================
+       MENU INFERIOR (SOMENTE MOBILE)
+       ====================================================== -->
+  <nav class="bottom-nav">
+
+    <a href="atividades.html" class="nav-btn active" data-page="atividades">
+      <i class="fas fa-book book-icon"></i>
+      <span class="nav-text">Atividades</span>
+    </a>
+    <a href="leitura.html" class="nav-btn" data-page="leitura">
+      <i class="fas fa-book"></i>
+      <span class="nav-text">Leitura</span>
+    </a>
+    <a href="login.html" class="nav-btn" data-page="perfil">
+      <i class="fas fa-user"></i>
+      <span class="nav-text">Perfil</span>
+    </a>
+  </nav>
+
+  <!-- ======================================================
+       SCRIPT PRINCIPAL
+       ====================================================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+  <script src="assets/script/database.js"></script>
+  <script src="assets/script/utils.js"></script>
+  <script src="assets/script/atividades.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Sistema</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon/logo_topo.svg">
+    <link rel="stylesheet" href="/assets/style/principal.css">
+    <style>
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 20%, rgba(68, 210, 242, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div id="desktop-screen" class="screen">
+        <div class="desktop-container">
+            <div class="logo-container">
+                <img src="/assets/icon/alfabit-logo.png" alt="Logo da Empresa" class="logo-img">
+            </div>
+            
+            <div class="form-container">
+                <h1 class="form-title">Cadastro</h1>
+                <form id="cadastro-form">
+                    <div class="form-group">
+                        <label for="usuario">Usuário:</label>
+                        <input type="text" id="usuario" name="usuario" required placeholder="Digite seu nome de usuário">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required placeholder="exemplo@domínio.com">
+                    </div>
+
+                   <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="data-nascimento">Data de Nascimento:</label>
+                            <input type="date" id="data-nascimento" name="data-nascimento" required>
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="escolaridade">Nível de Escolaridade:</label>
+                            <select id="escolaridade" name="escolaridade" required>
+                                <option value="">Selecione</option>
+                                <option value="fundamental-incompleto">Fundamental Incompleto</option>
+                                <option value="fundamental-completo">Fundamental Completo</option>
+                                <option value="medio-incompleto">Médio Incompleto</option>
+                                <option value="medio-completo">Médio Completo</option>
+                                <option value="superior-incompleto">Superior Incompleto</option>
+                                <option value="superior-completo">Superior Completo</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group password-wrapper">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" required placeholder="Mínimo 6 caracteres">
+                        <span class="toggle-password">
+                            <img src="/assets/icon/eye.svg" alt="Mostrar senha" class="eye-icon">
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Cadastrar</button>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="login-section">
+                            <p class="login-message">Já tem uma conta?</p>
+                            <a href="login.html" class="login-link">Fazer Login</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobile-screen" class="screen">
+        <div class="mobile-container">
+            <div class="form-container">
+                <h1 class="form-title">Cadastro</h1>
+                <form id="cadastro-form-mobile">
+                    <div class="form-group">
+                        <label for="usuario-mobile">Usuário:</label>
+                        <input type="text" id="usuario-mobile" name="usuario" required placeholder="Digite seu nome de usuário">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email-mobile">E-mail:</label>
+                        <input type="email" id="email-mobile" name="email" required placeholder="exemplo@domínio.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="data-nascimento-mobile">Data de Nascimento:</label>
+                        <input type="date" id="data-nascimento-mobile" name="data-nascimento" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="escolaridade-mobile">Nível de Escolaridade:</label>
+                        <select id="escolaridade-mobile" name="escolaridade" required>
+                            <option value="">Selecione</option>
+                            <option value="fundamental-incompleto">Fundamental Incompleto</option>
+                            <option value="fundamental-completo">Fundamental Completo</option>
+                            <option value="medio-incompleto">Médio Incompleto</option>
+                            <option value="medio-completo">Médio Completo</option>
+                            <option value="superior-incompleto">Superior Incompleto</option>
+                            <option value="superior-completo">Superior Completo</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group password-wrapper">
+                        <label for="senha-mobile">Senha:</label>
+                        <input type="password" id="senha-mobile" name="senha" required placeholder="Mínimo 6 caracteres">
+                        <span class="toggle-password">
+                            <img src="/assets/icon/eye.svg" alt="Mostrar senha" class="eye-icon">
+                        </span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Cadastrar</button>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="login-section">
+                            <p class="login-message">Já tem uma conta?</p>
+                            <a href="login.html" class="login-link">Fazer Login</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+
+    <script src="assets/script/database.js"></script>
+    <script src="assets/script/utils.js"></script>
+    
+    <script src="assets/script/script.js"></script>
+
+</body>
+</html>

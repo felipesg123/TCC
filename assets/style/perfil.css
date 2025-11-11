@@ -1,0 +1,292 @@
+/* Estilos Gerais */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #907FD8; /* Cor de fundo roxo claro da referência */
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Seção de Perfil (Área Roxa Escura) */
+.profile-section {
+    background: #3A0F7A; /* Roxo escuro da referência */
+    padding: 20px 30px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    position: relative;
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Container do Menu */
+.menu-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Estilo Base para Botões */
+.Btn {
+    border: none;
+    border-radius: 50px; /* Formato de pílula */
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.Btn:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo específico para o botão "voltar" */
+.header-buttons a.Btn {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 2px solid #3A0F7A; /* Borda roxa */
+    padding: 10px 20px; /* Ajuste de padding */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave */
+}
+
+.header-buttons a.Btn:hover {
+    background-color: #3A0F7A; /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+}
+
+/* Botão Menu (Apenas Ícone) */
+.Btn.icon-btn {
+    background: transparent;
+    padding: 5px;
+    color: white;
+}
+
+.Btn.icon-btn .svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+}
+
+/* Popup Menu */
+.popup-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95); /* Branco translúcido */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    width: 220px;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    margin-top: 10px;
+}
+
+.popup-menu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgba(255, 255, 255, 0.95);
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: left;
+}
+
+.menu-item:hover {
+    background-color: rgba(58, 15, 122, 0.1);
+}
+
+.menu-icon {
+    width: 18px;
+    height: 18px;
+    fill: #3A0F7A;
+}
+
+/* Container do Perfil (Foto e Nome) */
+.profile-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Foto de Perfil */
+.profile-pic-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #c4c4c4;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+#profilePic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Nome de Usuário */
+.profile-name {
+    margin-left: 30px;
+}
+
+.profile-name h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Seção de Conteúdo (Cartão Branco) */
+.content-section {
+    background-color: white;
+    border-radius: 30px;
+    padding: 30px;
+    margin: 20px;
+}
+
+.user-level-section h2 {
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+progress {
+    width: 100%;
+    height: 15px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #6F3FC2;
+    border-radius: 10px;
+}
+
+.activities-btn {
+    display: block;
+    margin: 20px auto 10px;
+    padding: 17px 18px;
+    background-color: #3A0F7A;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 200px; /* Largura fixa */
+    text-align: center;
+}
+
+.activities-btn:hover {
+    background-color: #2A076E;
+}
+
+/* Seção de Nível de Usuário Minimalista */
+.user-level-section {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre a barra e a porcentagem */
+}
+
+.progress-bar-container {
+    flex-grow: 1; /* Faz a barra ocupar o máximo de espaço possível */
+}
+
+.progress-label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+    flex-shrink: 0; /* Impede que o texto seja espremido */
+}
+
+/* Barra de Progresso Minimalista */
+progress {
+    width: 100%;
+    height: 8px; /* Barra mais fina */
+    -webkit-appearance: none;
+    appearance: none;
+    border: none; /* Remove bordas que alguns navegadores adicionam */
+}
+
+progress::-webkit-progress-bar {
+    background-color: #E0E0E0; /* Fundo cinza claro */
+    border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #907FD8; /* Roxo suave da paleta de cores */
+    border-radius: 5px;
+    transition: width 0.5s ease; /* Animação suave */
+}
+
+/* Ajustes para Mobile (Opcional, mas recomendado) */
+@media (max-width: 768px) {
+    .profile-section {
+        border-radius: 0 0 30px 30px;
+        padding: 15px;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-pic-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .profile-name {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .profile-name h1 {
+        font-size: 2rem;
+    }
+
+    .content-section {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    .popup-menu {
+        width: 200px;
+        right: -10px;
+    }
+}

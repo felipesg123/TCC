@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interpretação de Texto</title>
+  <link rel="stylesheet" href="assets/style/interpretacao.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header (Desktop/Tablet) -->
+  <header>
+    <div class="header-right">
+      <a href="javascript:history.back()" class="round-btn back-header-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span id="btn-voltar">Voltar</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <div class="main-container">
+    <div class="activity-card fade-in">
+      <div class="card-header">
+        <h1 class="card-title">📚 Interpretação de Texto</h1>
+        <p class="card-subtitle">Leia o texto atentamente e responda as questões</p>
+      </div>
+      
+      <!-- Área do texto -->
+      <div class="texto-container" id="texto">
+        <!-- O texto será inserido aqui via JavaScript -->
+      </div>
+
+      <!-- Área das perguntas -->
+      <div class="perguntas-container" id="perguntas">
+        <!-- As perguntas serão inseridas aqui via JavaScript -->
+      </div>
+
+      <!-- Botões -->
+      <div class="button-container">
+        <button onclick="verificarRespostas()" class="action-btn" id="btnVerificar">
+          <i class="fas fa-check-circle"></i>
+          Verificar Respostas
+        </button>
+        <button onclick="voltarParaPerguntas()" class="action-btn secondary-btn" id="btnVoltar" style="display: none;">
+          <i class="fas fa-arrow-left"></i>
+          Voltar
+        </button>
+      </div>
+
+      <!-- Resultado geral -->
+      <div id="resultado" class="resultado"></div>
+      
+      <!-- Feedback detalhado -->
+      <div class="feedback-container" id="feedbackContainer">
+        <div class="feedback-titulo">📋 Detalhe das Respostas</div>
+        <div id="feedbackItens"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de Navegação Inferior (Mobile) -->
+  <div class="bottom-nav">
+    <a href="BemVindo.html" class="nav-btn">
+      <i class="fas fa-home"></i>
+      <span class="nav-text">Início</span>
+    </a>
+    <a href="atividades.html" class="nav-btn active">
+      <i class="fas fa-edit"></i>
+      <span class="nav-text">Atividades</span>
+    </a>
+    <a href="leitura.html" class="nav-btn">
+      <i class="fas fa-book"></i>
+      <span class="nav-text">Leitura</span>
+    </a>
+  </div>
+
+  <script src="assets/script/interpretacao.js"></script>
+</body>
+</html>

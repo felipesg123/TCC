@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corretor de Texto</title>
+  <link rel="stylesheet" href="assets/style/gramatica.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header (Desktop/Tablet) -->
+  <header>
+    <div class="header-right">
+      <a href="javascript:history.back()" class="round-btn back-header-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span id="btn-voltar">Voltar</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <div class="main-container">
+    <div class="corrector-card fade-in">
+      <div class="card-header">
+        <h1 class="card-title">Corretor ortográfico</h1>
+        <p class="card-subtitle">Escreva sobre temas aleatórios e aprimore sua escrita</p>
+      </div>
+      
+      <!-- Controles de dificuldade -->
+      <div class="difficulty-controls">
+        <button class="difficulty-btn active" data-difficulty="facil">Fácil</button>
+        <button class="difficulty-btn" data-difficulty="medio">Médio</button>
+        <button class="difficulty-btn" data-difficulty="dificil">Difícil</button>
+      </div>
+      
+      <!-- Área de tema aleatório -->
+      <div class="theme-container">
+        <div class="theme-header">
+          <h3 class="theme-title">Tema da Redação</h3>
+          <button id="novoTema" class="novo-tema-btn">
+            <i class="fas fa-sync-alt"></i>
+            Novo Tema
+          </button>
+        </div>
+        <div class="theme-details">
+          <div class="theme-item">
+            <span class="theme-label">TEMA</span>
+            <span class="theme-value" id="temaTexto">Meu animal de estimação favorito</span>
+          </div>
+          <div class="theme-item">
+            <span class="theme-label">TIPO DE TEXTO</span>
+            <span class="theme-value" id="tipoTexto">Descritivo</span>
+          </div>
+          <div class="theme-item">
+            <span class="theme-label">PESSOA</span>
+            <span class="theme-value" id="pessoaTexto">1ª pessoa</span>
+          </div>
+          <div class="theme-item">
+            <span class="theme-label">TÍTULO</span>
+            <span class="theme-value" id="tituloTexto">Opcional</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="input-group">
+        <label for="entrada">Digite seu texto:</label>
+        <div class="input-info">
+          <span>Mínimo recomendado: 30 linhas</span>
+          <span id="linhasContador">0 linhas</span>
+        </div>
+        <textarea id="entrada" placeholder="Comece a escrever sua redação aqui..."></textarea>
+        <div class="protection-overlay" id="protectionOverlay">
+          <div class="protection-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="protection-message">
+            Cópia e colagem estão desativadas para esta atividade
+          </div>
+          <small>Digite seu próprio texto para praticar sua escrita</small>
+        </div>
+      </div>
+      
+      <div class="button-container">
+        <button id="corrigir" class="action-btn">
+          <i class="fas fa-magic"></i>
+          Corrigir Texto
+        </button>
+        <button id="limpar" class="action-btn secondary-btn">
+          <i class="fas fa-broom"></i>
+          Limpar
+        </button>
+      </div>
+      
+      <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <p>Analisando seu texto...</p>
+      </div>
+      
+      <div class="result-container">
+        <div class="result-header">
+          <h3>Texto Corrigido</h3>
+          <div class="stats">
+            <div class="stat" id="palavras">0 palavras</div>
+            <div class="stat" id="caracteres">0 caracteres</div>
+            <div class="stat" id="erros">0 erros</div>
+          </div>
+        </div>
+        <div class="corrected-text-container" id="correctedTextContainer">
+          <div class="corrected-text" id="correctedText">
+            Seu texto corrigido aparecerá aqui...
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay para popup -->
+  <div class="popup-overlay" id="popupOverlay"></div>
+
+  <!-- Toast de notificação -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Barra de Navegação Inferior (Mobile) -->
+  <div class="bottom-nav">
+    <a href="BemVindo.html" class="nav-btn">
+      <i class="fas fa-home"></i>
+      <span class="nav-text">Início</span>
+    </a>
+    <a href="atividades.html" class="nav-btn active">
+      <i class="fas fa-edit"></i>
+      <span class="nav-text">Corretor</span>
+    </a>
+    <a href="leitura.html" class="nav-btn">
+      <i class="fas fa-book"></i>
+      <span class="nav-text">Leitura</span>
+    </a>
+  </div>
+
+  <script src="assets/script/gramatica.js"></script>
+</body>
+</html>

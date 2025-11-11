@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - AlfabetizaApp</title>
+    <!-- <link rel="stylesheet" href="assets/style/configuracoes.css"> -->
+    <link rel="stylesheet" href="assets/style/configuracoes.css">
+</head>
+<body>
+    <header class="header">
+        <button class="back-btn" onclick="window.history.back()">← Voltar</button>
+        <h1>Configurações</h1>
+        <div class="header-spacer"></div>
+    </header>
+
+    <main class="container">
+        <!-- Notificações -->
+        <section class="settings-section">
+            <h2>Notificações</h2>
+            <div class="setting-item">
+                <label for="notifications">Notificações push</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="notifications" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <label for="email-notifications">Notificações por email</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="email-notifications">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <!-- Privacidade -->
+        <section class="settings-section">
+            <h2>Privacidade</h2>
+            <div class="setting-item">
+                <label for="profile-visibility">Perfil público</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="profile-visibility">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <label for="data-collection">Compartilhar dados anônimos</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="data-collection" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <!-- Acessibilidade -->
+        <section class="settings-section">
+            <h2>Acessibilidade</h2>
+            <div class="setting-item">
+                <label for="font-size">Tamanho da fonte</label>
+                <select id="font-size">
+                    <option value="small">Pequeno</option>
+                    <option value="medium" selected>Médio</option>
+                    <option value="large">Grande</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label for="high-contrast">Alto contraste</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="high-contrast">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <!-- Sobre -->
+        <section class="settings-section">
+            <h2>Sobre</h2>
+            <div class="info-item">
+                <span>Versão do App</span>
+                <span>1.0.0</span>
+            </div>
+            <div class="info-item">
+                <span>Política de Privacidade</span>
+                <button class="link-btn" onclick="openPrivacyPolicy()">Ver</button>
+            </div>
+            <div class="info-item">
+                <span>Termos de Uso</span>
+                <button class="link-btn" onclick="openTerms()">Ver</button>
+            </div>
+        </section>
+
+        <!-- Ações -->
+        <section class="settings-section">
+            <button class="btn btn-secondary" onclick="exportData()">Exportar Meus Dados</button>
+            <button class="btn btn-danger" onclick="deleteAccount()">Excluir Minha Conta</button>
+        </section>
+    </main>
+
+    <script src="assets/script/configuracoes.js"></script>
+</body>
+</html>

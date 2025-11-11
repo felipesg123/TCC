@@ -1,0 +1,489 @@
+/* ===== ESTILOS BASE COERENTES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #88C0FF, #442973);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  padding: 0;
+  user-select: none;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Header Styles - EXATAMENTE DO SEU SITE */
+header {
+  background-color: #DEEDF5;
+  padding: 16px 22px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Botão Voltar - EXATAMENTE DO SEU SITE */
+.round-btn.back-header-btn {
+  position: relative;
+  width: auto !important;
+  height: 40px;
+  border-radius: 30px !important;
+  padding: 0 15px;
+  background: linear-gradient(135deg, #4648C9, #6A2C91);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(70, 72, 201, 0.3);
+  overflow: hidden;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.round-btn.back-header-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s ease;
+}
+
+.round-btn.back-header-btn:hover::before {
+  left: 100%;
+}
+
+.round-btn.back-header-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(70, 72, 201, 0.4);
+}
+
+.round-btn.back-header-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(70, 72, 201, 0.3);
+}
+
+#btn-voltar {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* Container principal */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 72px);
+  padding: 30px 20px;
+}
+
+.activity-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 900px;
+  min-height: 600px;
+  padding: 30px;
+  color: #333;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.card-title {
+  color: #442973;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card-subtitle {
+  color: #4648C9;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+/* Área do texto */
+.texto-container {
+  background: #f0f7fc;
+  border-left: 4px solid #4648C9;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 0 12px 12px 0;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+.texto-container h2 {
+  color: #442973;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.texto-container p {
+  color: #333;
+  text-align: justify;
+}
+
+/* Perguntas */
+.perguntas-container {
+  margin-top: 30px;
+}
+
+.pergunta {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 2px solid #e1e8f0;
+  transition: all 0.3s ease;
+}
+
+.pergunta:hover {
+  border-color: #4648C9;
+  box-shadow: 0 4px 12px rgba(70, 72, 201, 0.1);
+}
+
+.pergunta h3 {
+  color: #442973;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.alternativas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.alternativa {
+  padding: 12px 15px;
+  background: white;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Nunito', sans-serif;
+}
+
+.alternativa:hover {
+  border-color: #4648C9;
+  background: #f0f4ff;
+  transform: translateY(-2px);
+}
+
+.alternativa.selecionada {
+  border-color: #4648C9;
+  background: #e3f2fd;
+  box-shadow: 0 2px 8px rgba(70, 72, 201, 0.2);
+}
+
+.alternativa.correta {
+  border-color: #28a745;
+  background: #d4edda;
+  color: #155724;
+}
+
+.alternativa.incorreta {
+  border-color: #dc3545;
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Botões - ESTILO DO SEU SITE */
+.button-container {
+  display: flex;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 14px 25px;
+  background: linear-gradient(135deg, #4648C9, #6A2C91);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(70, 72, 201, 0.3);
+  font-family: 'Poppins', sans-serif;
+}
+
+.action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(70, 72, 201, 0.4);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+.action-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.secondary-btn {
+  background: linear-gradient(135deg, #88C0FF, #439FD9);
+}
+
+.secondary-btn:hover {
+  background: linear-gradient(135deg, #99C9FF, #54B2F2);
+}
+
+/* Resultado */
+.resultado {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  display: none;
+}
+
+.acerto {
+  background: #d4edda;
+  color: #155724;
+  border: 2px solid #c3e6cb;
+}
+
+.erro {
+  background: #f8d7da;
+  color: #721c24;
+  border: 2px solid #f5c6cb;
+}
+
+/* Feedback Container */
+.feedback-container {
+  margin-top: 25px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  display: none;
+  border-left: 4px solid #4648C9;
+}
+
+.feedback-item {
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border-left: 4px solid;
+}
+
+.feedback-correto {
+  background: #d4edda;
+  border-left-color: #28a745;
+  color: #155724;
+}
+
+.feedback-incorreto {
+  background: #f8d7da;
+  border-left-color: #dc3545;
+  color: #721c24;
+}
+
+.resposta-correta {
+  font-weight: bold;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.feedback-titulo {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  color: #442973;
+  text-align: center;
+  font-weight: 600;
+}
+
+.status-pergunta {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 25px;
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.status-correto {
+  background: #28a745;
+  color: white;
+}
+
+.status-incorreto {
+  background: #dc3545;
+  color: white;
+}
+
+/* Barra de navegação inferior (APENAS MOBILE) */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #DEEDF5;
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #442973;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+
+.nav-btn.active,
+.nav-btn:hover {
+  opacity: 1;
+  background-color: rgba(68, 41, 115, 0.1);
+}
+
+.nav-btn i {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.nav-text {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 20px 15px;
+    min-height: calc(100vh - 72px);
+  }
+
+  .activity-card {
+    padding: 25px 20px;
+    min-height: 500px;
+  }
+
+  .card-title {
+    font-size: 1.8rem;
+  }
+
+  .card-subtitle {
+    font-size: 1rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+
+  .texto-container {
+    padding: 20px;
+  }
+
+  .pergunta {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    display: none;
+  }
+
+  .bottom-nav {
+    display: flex;
+  }
+
+  body {
+    padding-bottom: 70px;
+  }
+
+  .main-container {
+    min-height: calc(100vh - 70px);
+    padding: 15px 10px;
+  }
+
+  .activity-card {
+    padding: 20px 15px;
+    border-radius: 15px;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+  }
+
+  .nav-text {
+    display: none;
+  }
+
+  .nav-btn i {
+    margin-bottom: 0;
+    font-size: 22px;
+  }
+
+  .action-btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  .texto-container {
+    padding: 15px;
+  }
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}

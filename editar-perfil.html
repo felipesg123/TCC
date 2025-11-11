@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon/logo_topo.svg">
+    <link rel="stylesheet" href="assets/style/editar-perfil.css">
+</head>
+<body>
+    <div class="edit-profile-section">
+        <header>
+            <div class="header-buttons">
+                <button id="backBtn" class="Btn back-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+                    Voltar
+                </button>
+                <h1 class="page-title">Editar Perfil</h1>
+                <div class="spacer"></div>
+            </div>
+        </header>
+
+        <div class="edit-container">
+            <div class="profile-pic-section">
+                <div class="profile-pic-wrapper">
+                    <img src="assets/icon/user icon.png" alt="Foto de perfil" id="profilePic">
+                    <label for="profilePicUpload" class="upload-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="upload-icon"><path d="M149.1 64.8L138.7 96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H373.3L362.9 64.8C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
+                    </label>
+                    <input type="file" id="profilePicUpload" accept="image/*" class="hidden">
+                </div>
+                <p class="upload-text">Clique na foto para alterar</p>
+            </div>
+
+            <form class="edit-form" id="editForm">
+                <div class="form-group">
+                    <label for="nameInput">Nome de Usuário</label>
+                    <input type="text" id="nameInput" placeholder="Digite seu nome de usuário" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailInput">E-mail</label>
+                    <input type="email" id="emailInput" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneInput">Telefone</label>
+                    <input type="tel" id="phoneInput" placeholder="(Opcional) Digite seu telefone">
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="cancelBtn" class="Btn cancel-btn">Cancelar</button>
+                    <button type="submit" class="Btn save-btn">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <script src="assets/script/database.js"></script>
+    <script src="assets/script/utils.js"></script>
+    <script src="assets/script/editar-perfil.js"></script>
+</body>
+</html>

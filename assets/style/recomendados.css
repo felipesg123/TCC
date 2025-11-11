@@ -1,0 +1,534 @@
+/* ========================================================= */
+/* RESET E BASE DO PROJETO                                   */
+/* ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h3 {
+    background-color: #3a3cb0;
+    border-radius: 20px;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #6a71c7, #442973);
+    color: white;
+}
+
+/* Ícones dentro dos cards */
+.img-icon-card {
+    width: 3px;
+    height: 3px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* ========================================================= */
+/* HEADER                                                    */
+/* ========================================================= */
+header {
+    background-color: #DEEDF5;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Botões redondos do header */
+.round-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4648C9;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.round-btn:hover {
+    background-color: #3a3cb0;
+    transform: scale(1.05);
+}
+
+/* Campo de busca */
+.search-container {
+    position: relative;
+    width: 200px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 15px 8px 35px;
+    border-radius: 20px;
+    border: 1px solid #B0C3DB;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s;
+    background-color: white;
+}
+
+.search-input:focus {
+    border-color: #4648C9;
+    box-shadow: 0 0 0 2px rgba(70, 72, 201, 0.2);
+    border-radius: 20px 20px 0 0;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4648C9;
+    font-size: 14px;
+}
+
+/* Avatar do usuário */
+.user-profile-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #DEEDF5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.user-profile-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.default-icon {
+    font-size: 24px;
+    color: #442973;
+}
+
+.user-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ========================================================= */
+/* CONTEÚDO PRINCIPAL                                        */
+/* ========================================================= */
+.main-content {
+    min-height: calc(100vh - 80px);
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* ========================================================= */
+/* GRID DE CARDS (com espaçamento corrigido)                 */
+/* ========================================================= */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px; /* Espaçamento entre linhas e colunas */
+    max-width: 1200px;
+    width: 100%;
+    padding: 30px;
+    justify-items: center; /* Centraliza os cards em cada célula */
+}
+
+/* 
+   ❌ Removido o margin anterior dos cards.
+   ✅ Agora o espaçamento é controlado apenas pelo grid.
+*/
+.cards-grid .special-card {
+    margin: 400;
+}
+
+/* ========================================================= */
+/* RESPONSIVIDADE                                            */
+/* ========================================================= */
+@media (max-width: 1024px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 130px;
+        padding: 10px;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .cards-grid {
+        max-width: 1400px;
+        gap: 45px;
+    }
+}
+
+/* ========================================================= */
+/* ESTILO DOS CARDS ESPECIAIS                                */
+/* ========================================================= */
+.special-card {
+    width: 250px;
+    height: 320px;
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    border-radius: 20px;
+    transition: all .1s;
+    cursor: pointer;
+    justify-self: center;
+    margin-bottom: 50px;
+}
+
+.special-card-inner {
+    width: 250px;
+    height: 320px;
+    background-color: #1a1a1a;
+    border-radius: 17px;
+    transition: all .2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ========================================================= */
+/* ESTILO DE IMAGEM DENTRO DO CARD                           */
+/* ========================================================= */
+.pdf-canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 17px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+/* Efeitos de hover e seleção */
+.pdf-canvas:hover,
+.pdf-canvas.selected,
+.pdf-canvas.selected:hover {
+    filter: grayscale(0%);
+}
+
+/* Classe auxiliar para modo preto e branco */
+.pdf-canvas.bw-image {
+    filter: grayscale(100%);
+}
+
+.pdf-canvas.bw-image:hover {
+    filter: grayscale(0%);
+}
+
+/* Efeitos visuais de hover no card */
+.special-card-inner:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+}
+
+.special-card:hover {
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+
+/* ========================================================= */
+/* TEXTO DOS CARDS                                           */
+/* ========================================================= */
+.card-text {
+    margin-top: 25px;
+    text-align: center;
+    color: white;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #3a3cb0;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    width: 250px;
+    right: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    vertical-align: middle;
+    filter: brightness(0) invert(1);
+}
+
+.card-text h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 20px;
+    margin: 0;
+    flex: 1;
+}
+
+.card-text p {
+    font-size: 14px;
+    color: #e0e0e0;
+    line-height: 1.4;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================================= */
+/* ELEMENTOS EXTRAS                                          */
+/* ========================================================= */
+
+/* Spinner de carregamento */
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+}
+
+/* ========================================================= */
+/* MODAL DE VISUALIZAÇÃO DE LIVRO                            */
+/* ========================================================= */
+.pdf-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.pdf-modal-content {
+    background-color: #2c2e8a;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    height: 90%;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.pdf-modal-header {
+    padding: 15px;
+    background-color: #3a3cb0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pdf-modal-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.pdf-modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.book-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: white;
+    color: #333;
+}
+
+.book-info {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #4648C9;
+}
+
+.book-info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.book-text {
+    line-height: 1.6;
+    font-size: 16px;
+    text-align: justify;
+}
+
+/* ========================================================= */
+/* ESTILO DA CAPA DO LIVRO                                   */
+/* ========================================================= */
+.book-cover {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: white;
+}
+
+.book-cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 17px;
+}
+
+/* ========================================================= */
+/* MENSAGENS DE STATUS                                       */
+/* ========================================================= */
+.loading-message, .no-results, .error-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: white;
+}
+
+.no-results, .error-message {
+    color: #ff6b6b;
+}
+
+/* ========================================================= */
+/* BOTÕES PADRÃO                                             */
+/* ========================================================= */
+.button {
+    background: rgba(67, 97, 238, 0.1);
+    color: #4648C9;
+    border: 2px solid #4648C9;
+    padding: 8px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #4648C9;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ===== NAVEGAÇÃO INFERIOR (MOBILE) ===== */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #deedf5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #6c757d;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+.nav-btn.active {
+    opacity: 1;
+    background-color: rgba(67, 97, 238, 0.1);
+    color: #4361ee;
+}
+
+.nav-btn:hover {
+    opacity: 1;
+    background-color: rgba(67, 97, 238, 0.1);
+}
+
+.nav-btn i {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.nav-btn svg {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 4px;
+}
+
+.nav-text {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 80px;
+    }
+
+    .main-content {
+        margin-bottom: 70px;
+    }
+}
+
+@media (min-width: 769px) {
+    .bottom-nav {
+        display: none;
+    }
+
+    body {
+        padding-bottom: 0;
+    }
+}

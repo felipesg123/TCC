@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual - Leitura</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon/logo_topo.svg">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="assets/style/recomendados.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="index.html" class="home-btn" aria-label="Voltar para a página inicial">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+
+        <div class="header-right">
+            <button class="button"
+                onclick="localStorage.setItem('origemDicionario', 'leitura'); window.location.href='dicinario.html'">
+                <div><span>Pesquisar no Dicionário</span></div>
+            </button>
+
+            <a href="login.html" class="user-profile-btn">
+                <img src="assets/icon/user_icon.png" alt="Foto do usuário" class="user-avatar">
+            </a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="cards-grid" id="books-grid">
+            <!-- Books will be loaded dynamically from database -->
+            <div class="loading-message">Carregando livros...</div>
+        </div>
+    </main>
+
+    <!-- Barra de Navegação Inferior (Mobile) -->
+    <nav class="bottom-nav">
+        <a href="atividades.html" class="nav-btn" data-page="atividades">
+            <i class="fas fa-book book-icon"></i>
+            <span class="nav-text">Atividades</span>
+        </a>
+        <a href="dicinario.html" class="nav-btn" data-page="home">
+            <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3H7a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM7 5h11v10H7a3 3 0 0 0-1 .18V6a1 1 0 0 1 1-1zm0 14a1 1 0 0 1 0-2h11v2z"/>
+            </svg>
+            <span class="nav-text">pesquisa</span>
+        </a>
+        <a href="login.html" class="nav-btn" data-page="perfil">
+            <i class="fas fa-user"></i>
+            <span class="nav-text">Perfil</span>
+        </a>
+    </nav>
+
+    <!-- Modal for reading book content -->
+    <div id="book-modal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <div class="pdf-modal-title" id="book-modal-title">Título do Livro</div>
+                <button class="pdf-modal-close" id="close-book-modal">&times;</button>
+            </div>
+            <div class="book-content" id="book-content">
+                <!-- Book content will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SQL.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <script src="assets/script/database.js"></script>
+    <script src="assets/script/utils.js"></script>
+    <script src="assets/script/BemVindo.js"></script>
+
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <script src="assets/script/leitura.js"></script>
+</body>
+</html>

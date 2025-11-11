@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dicionário com API (Dicio via AllOrigins)</title>
+    <link rel="stylesheet" href="assets/style/dicionario.css">
+</head>
+<body>
+    <!-- botão voltar -->
+    <a href="#" class="back-button" aria-label="Voltar" onclick="voltarParaOrigem()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+        </svg>
+    </a>
+
+    <div class="container">
+        <div class="background-shape shape1"></div>
+        <div class="background-shape shape2"></div>
+        <div class="background-shape shape3"></div>
+
+        <h1>Dicionário</h1>
+
+        <form class="search-form" id="searchForm">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Digite uma palavra para pesquisar..." class="search-input" id="dictionary-input" autocomplete="off">
+                <div class="search-results-popup" id="dictionary-results-popup" role="listbox" aria-label="Sugestões"></div>
+            </div>
+            <button type="submit" class="search-button" id="searchButton">
+                <i class="fas fa-search"></i> Pesquisar
+            </button>
+        </form>
+
+        <div class="result-container" id="resultContainer"></div>
+
+        <div class="api-info" id="apiInfo">
+            <i class="fas fa-database"></i>
+            Dados fornecidos por <a href="https://www.dicio.com.br" target="_blank" style="color:#b9e9d1; text-decoration:underline;">Dicio.com.br</a> (via AllOrigins)
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <script src="assets/script/database.js"></script>
+    <script src="assets/script/utils.js"></script>
+    <script src="assets/script/BemVindo.js"></script>
+    <script src="assets/script/dicionario.js"></script>
+</body>
+</html>

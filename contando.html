@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contando até 10 - AlfabetizaApp</title>
+    <link rel="stylesheet" href="atividade.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Timer Opcional -->
+    <div class="timer" id="timer">
+        <i class="fas fa-clock"></i>
+        <span id="time">00:00</span>
+    </div>
+
+    <header class="header">
+        <button class="back-btn" onclick="window.history.back()">
+            <i class="fas fa-arrow-left"></i>
+            Voltar
+        </button>
+        <h1>Contando até 10</h1>
+        <div class="header-spacer"></div>
+    </header>
+
+    <main class="activity-container">
+        <!-- Barra de Progresso -->
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 0%"></div>
+        </div>
+
+        <div class="activity-instruction">
+            <h2><i class="fas fa-keyboard"></i> Digite os números na ordem correta</h2>
+            <p>Complete a sequência digitando os números de 1 a 10 nos campos abaixo!</p>
+        </div>
+
+        <div class="counting-activity">
+            <!-- Campos de Entrada para Sequência -->
+            <div class="sequence-section">
+                <h3><i class="fas fa-list-ol"></i> Sequência de 1 a 10:</h3>
+                <div class="input-container" id="inputContainer">
+                    <input type="number" class="number-input" placeholder="1" min="1" max="10">
+                    <input type="number" class="number-input" placeholder="2" min="1" max="10">
+                    <input type="number" class="number-input" placeholder="3" min="1" max="10">
+                    <input type="number" class="number-input" placeholder="4" min="1" max="10">
+                    <input type="number" class="number-input" placeholder="5" min="1" max="10">
+                    <input type="number" class="number-input" placeholder="6" min="1" max="10">
+                    <input type="number" class="number-input" placeholder="7" min="1" max="10">
+                    <input type="number" class="number-input" placeholder="8" min="1" max="10">
+                    <input type="number" class="number-input" placeholder="9" min="1" max="10">
+                    <input type="number" class="number-input" placeholder="10" min="1" max="10">
+                </div>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="checkSequence()">
+                    <i class="fas fa-check-circle"></i>
+                    Verificar
+                </button>
+                <button class="btn btn-secondary" onclick="resetActivity()">
+                    <i class="fas fa-redo"></i>
+                    Recomeçar
+                </button>
+            </div>
+        </div>
+
+        <!-- Mensagem de Resultado -->
+        <div id="resultMessage" class="result-message hidden"></div>
+
+        <!-- Efeito de Confetti -->
+        <div id="confettiContainer"></div>
+
+    <script src="assets/script/utils.js"></script>
+    <script src="assets/script/contando.js"></script>
+</body>
+</html>

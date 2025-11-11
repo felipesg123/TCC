@@ -1,0 +1,439 @@
+/* Estilos base */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f9fc;
+    overflow: hidden;
+}
+
+.screen {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+/* Versão Desktop */
+#desktop-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f7fc;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.desktop-container {
+    display: flex;
+    width: 1000px;
+    max-width: 900px;
+    height: 600px;
+    min-height: 500px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(65, 90, 166, 0.1);
+}
+
+.logo-container {
+    flex: 1;
+    background: linear-gradient(400deg, #3044A7, #83DAF3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 15px 0 0 15px;
+}
+
+/* LOGO REDIMENSIONADA */
+.logo-img {
+    max-width: 60%;
+    max-height: 60%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.form-container {
+    flex: 1;
+    padding: 3rem 2rem;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-title {
+    color: #000000;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #457ABF;
+    font-weight: 500;
+}
+
+/* Campo de input */
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #439FD9;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #415AA6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(65, 90, 166, 0.2);
+    background-color: white;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #415AA6, #439FD9);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.8rem;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(to right, #457ABF, #49C2F2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(68, 210, 242, 0.3);
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+/* ESTILOS CORRIGIDOS PARA O ÍCONE - DENTRO DO CAMPO */
+.toggle-password {
+    position: absolute;
+    right: 8px; /* Reduzido para ficar mais para dentro */
+    top: 70%; /* POSIÇÃO CORRIGIDA */
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: transparent;
+    padding: 4px;
+    border-radius: 4px;
+    user-select: none;
+    border: none;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.toggle-password:hover {
+    background: rgba(69, 122, 191, 0.1);
+}
+
+.toggle-password img {
+    width: 20px;
+    height: 20px;
+    transition: all 0.2s ease;
+}
+
+.toggle-password:hover img {
+    filter: brightness(0.7);
+}
+
+/* Quando a senha está visível */
+.toggle-password.active {
+    background: rgba(65, 90, 166, 0.1);
+}
+
+/* GARANTIR QUE O CAMPO DE SENHA TENHA PADDING PARA O ÍCONE */
+.password-wrapper input {
+    padding-right: 45px !important;
+}
+
+.password-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+.forgot-password {
+    color: #457ABF;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: #415AA6;
+    text-decoration: underline;
+}
+
+.login-section {
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid #eee;
+}
+
+.login-message {
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+}
+
+.login-link {
+    color: #457ABF;
+    font-size: 0.85rem;
+    text-decoration: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+}
+
+.login-link:hover {
+    color: #415AA6;
+    text-decoration: underline;
+    background-color: rgba(69, 122, 191, 0.1);
+}
+
+.form-container::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background-color: #44D2F2;
+    opacity: 0.1;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* Versão Mobile */
+@media (max-width: 768px) {
+    #desktop-screen {
+        display: none;
+    }
+    
+    #mobile-screen {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        background-color: #f0f7fc;
+        height: 100vh;
+        width: 100vw;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
+    .mobile-container {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(65, 90, 166, 0.1);
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    
+    .logo-container {
+        display: none;
+    }
+    
+    .form-container {
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .form-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.2rem;
+        padding: 0 10px;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+        padding: 0 10px;
+    }
+    
+    .form-group input {
+        padding: 12px 45px 12px 12px; /* Padding direito aumentado */
+        width: 100%;
+    }
+    
+    .submit-btn {
+        padding: 12px;
+        width: calc(100% - 20px);
+        margin: 0 10px;
+    }
+    
+    .password-actions {
+        margin: 5px 10px 10px 10px;
+    }
+    
+    .login-section {
+        margin: 1rem 10px 0 10px;
+        padding-top: 0.8rem;
+    }
+    
+    .form-container::after {
+        display: none;
+    }
+    
+    /* AJUSTES ESPECÍFICOS PARA MOBILE - ÍCONE DENTRO DO CAMPO */
+    .toggle-password {
+        right: 20px; /* Ajustado para mobile */
+        top: 70%; /* ALTERADO DE 50% PARA 70% PARA FICAR IGUAL AO DESKTOP */
+        transform: translateY(-50%);
+        padding: 4px;
+        width: 26px;
+        height: 26px;
+    }
+    
+    .toggle-password img {
+        width: 18px;
+        height: 18px;
+    }
+    
+    /* GARANTIR ESPAÇO PARA O ÍCONE NO MOBILE */
+    .password-wrapper input {
+        padding-right: 50px !important;
+    }
+}
+
+/* Estilos para os novos campos */
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #439FD9;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white;
+    color: #333;
+    box-sizing: border-box;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23439FD9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+}
+
+.form-group select:focus {
+    border-color: #415AA6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(65, 90, 166, 0.2);
+}
+
+.form-group input[type="date"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #439FD9;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.form-group input[type="date"]:focus {
+    border-color: #415AA6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(65, 90, 166, 0.2);
+}
+
+/* Estilos para mobile */
+@media (max-width: 768px) {
+    .form-group select,
+    .form-group input[type="date"] {
+        padding: 12px;
+        width: 100%;
+    }
+}
+
+/* Estilos para a linha com dois campos */
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin: 0.3rem 0 0.8rem 0;
+}
+
+.form-group.half-width {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Ajustes de espaçamento para os campos */
+.form-group {
+    margin-bottom: 0.7rem;
+}
+
+/* Ajuste específico para o campo de senha */
+.password-wrapper {
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Ajuste para as ações de senha */
+.password-actions {
+    margin-top: -8px;
+    margin-bottom: 0.8rem;
+}
+
+/* Ajuste para o botão */
+.form-group:last-of-type {
+    margin-top: 0.5rem;
+}
+
+/* Ajustes para mobile */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0.8rem;
+        margin: 0.3rem 0 1rem 0;
+    }
+    
+    .form-group.half-width {
+        width: 100%;
+    }
+    
+    .form-row .form-group {
+        padding: 0;
+    }
+    
+    /* Ajustes específicos para mobile */
+    .form-group {
+        margin-bottom: 0.8rem;
+    }
+    
+    .password-wrapper {
+        margin-top: 0.5rem;
+    }
+    
+    .password-actions {
+        margin: -5px 10px 10px 10px;
+    }
+}
+
+/* Garantir que a imagem do ícone seja sempre visível */
+.eye-icon {
+    display: block !important;
+}

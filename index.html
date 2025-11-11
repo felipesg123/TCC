@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alfabit</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon/logo_topo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/style/BemVindo.css">
+</head>
+<body>
+    <header>
+        <!-- Botão de Leitura no cabeçalho -->
+        <a href="leitura.html" class="reading-header-btn">
+            <button class="round-btn reading-header-btn" id="reading-header-btn">
+                <i class="fas fa-book"></i>
+                <p id="btn-leitura">Leitura</p>
+            </button>
+        </a>
+        
+        <button class="button" onclick="localStorage.setItem('origemDicionario', 'index'); window.location.href='dicinario.html'">
+            <div><span>pesquisar no Dicionário</span></div>
+        </button>
+
+        <!-- BOTÃO ADMIN (APENAS PARA ADMINISTRADORES) -->
+        <button class="button admin-btn" id="admin-btn" style="display: none;">
+            <div><span>Painel Admin</span></div>
+        </button>
+        
+        <a href="login.html" class="user-profile-btn">
+            <img src="assets/icon/user_icon.png" alt="Foto do usuário" class="user-avatar">
+        </a>
+    </header>
+
+    <main>
+        <div class="central-content">
+            <div class="welcome-text">Bem-vindo ao</div>
+            
+            <div class="logo-container">
+                <img src="assets/icon/alfabit-logo.png" alt="Logo do projeto" class="project-logo">
+            </div>
+            
+            <div class="start-text">Vamos começar!</div>
+            
+            <!-- Botão de Atividades com ícone de livro e caneta -->
+            <a href="atividades.html" class="new-activity-btn-container">
+                <button class="new-activity-btn">
+                    <span class="icon-container">
+                        <i class="fas fa-book book-icon"></i>
+                        <i class="fas fa-pen pen-icon"></i>
+                    </span>
+                    <span>Página de Atividades</span>
+                </button>
+            </a>
+        </div>
+    </main>
+
+    <!-- Barra de Navegação Inferior (Mobile) -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-btn active" data-page="home">
+            <i class="fas fa-home"></i>
+            <span class="nav-text">Início</span>
+        </a>
+        <a href="leitura.html" class="nav-btn" data-page="leitura">
+            <i class="fas fa-book"></i>
+            <span class="nav-text">Leitura</span>
+        </a>
+        <a href="login.html" class="nav-btn" data-page="perfil">
+            <i class="fas fa-user"></i>
+            <span class="nav-text">Perfil</span>
+        </a>
+    </nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <script src="assets/script/database.js"></script>
+    <script src="assets/script/utils.js"></script>
+    <script src="assets/script/BemVindo.js"></script>
+</body>
+</html>

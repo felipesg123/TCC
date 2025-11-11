@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.header {
+    background-color: #6a11cb;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.logo-container {
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+.default-logo {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-title {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.form-container {
+    padding: 30px;
+}
+
+.question-group {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.question-group:last-child {
+    border-bottom: none;
+}
+
+.level-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #6a11cb;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #6a11cb;
+}
+
+.question-text {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.answer-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+    transition: border-color 0.3s;
+}
+
+.answer-input:focus {
+    border-color: #6a11cb;
+    outline: none;
+}
+
+textarea.answer-input {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.btn {
+    background-color: #6a11cb;
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #5a0fb8;
+}
+
+.progress-container {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    height: 10px;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    height: 100%;
+    width: 0%;
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    text-align: center;
+    font-weight: 600;
+    color: #6a11cb;
+    margin-bottom: 10px;
+}
+
+.mobile-nav {
+    display: none;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-nav a {
+    color: #6a11cb;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+    }
+
+    .container {
+        margin: 10px 0;
+        border-radius: 8px;
+    }
+
+    .header {
+        padding: 20px 15px;
+    }
+
+    .default-logo {
+        font-size: 28px;
+    }
+
+    .welcome-title {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .form-container {
+        padding: 20px 15px;
+    }
+
+    .question-group {
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+    }
+
+    .level-title {
+        font-size: 16px;
+    }
+
+    .question-text {
+        font-size: 15px;
+    }
+
+    .answer-input {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 15px 10px;
+    }
+
+    .default-logo {
+        font-size: 24px;
+    }
+
+    .welcome-title {
+        font-size: 18px;
+    }
+
+    .form-container {
+        padding: 15px 10px;
+    }
+
+    .date-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .date-group input {
+        width: 100%;
+    }
+}

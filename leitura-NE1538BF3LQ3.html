@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual - Leitura</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon/logo_topo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/style/recomendados.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="index.html" class="home-btn" aria-label="Voltar para a página inicial">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+
+        <div class="header-right">
+               <button class="button" onclick="localStorage.setItem('origemDicionario', 'leitura'); window.location.href='dicinario.html'"><div><span>Pesquisar no Dicionário</span></div></button>
+            <a href="login.html" class="user-profile-btn">
+                <img src="assets/icon/user_icon.png" alt="Foto do usuário" class="user-avatar">
+            </a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="cards-grid">
+            <!-- Card 1 -->
+            <div class="special-card" data-pdf="assets/pdf/auto_da_barca_do_inferno.pdf">
+                <div class="special-card-inner">
+                    <canvas id="pdf-canvas-1" class="pdf-canvas"></canvas>
+                    <div class="loading-spinner" id="spinner-1">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+                <div class="card-text">
+                    <img src="assets/icon/opened-book-3163.png" alt="Ícone de livro" class="book-icon">
+                    <h3>O Auto da Barca do Inferno</h3>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="special-card" data-pdf="assets/pdf/dom_casmurro.pdf">
+                <div class="special-card-inner">
+                    <canvas id="pdf-canvas-2" class="pdf-canvas"></canvas>
+                    <div class="loading-spinner" id="spinner-2">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+                <div class="card-text">
+                    <img src="assets/icon/opened-book-3163.png" alt="Ícone de livro" class="book-icon">
+                    <h3>Dom Casmurro</h3>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="special-card" data-pdf="assets/pdf/memorias_postumas.pdf">
+                <div class="special-card-inner">
+                    <canvas id="pdf-canvas-3" class="pdf-canvas"></canvas>
+                    <div class="loading-spinner" id="spinner-3">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+                <div class="card-text">
+                    <img src="assets/icon/opened-book-3163.png" alt="Ícone de livro" class="book-icon">
+                    <h3>Memórias Póstumas</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="special-card" data-pdf="assets/pdf/memorias_postumas.pdf">
+                <div class="special-card-inner">
+                    <canvas id="pdf-canvas-3" class="pdf-canvas"></canvas>
+                    <div class="loading-spinner" id="spinner-3">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+                <div class="card-text">
+                    <img src="assets/icon/opened-book-3163.png" alt="Ícone de livro" class="book-icon">
+                    <h3>Macunaima</h3>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- PDF.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <script src="assets/script/leitura.js"></script>
+</body>
+</html>

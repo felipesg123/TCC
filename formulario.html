@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALFAbit - Avaliação</title>
+    <link rel="stylesheet" href="assets/style/formulario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="mobile-nav">
+            <a href="index.html"><i class="fas fa-arrow-left"></i> Voltar ao Início</a>
+        </div>
+       
+        <div class="header">
+            <div class="logo-container">
+                <div class="default-logo">ALFAbit</div>
+            </div>
+            <h2 class="welcome-title">Bem-vindo ao ALFAbit</h2>
+            <p class="subtitle">Vamos começar!</p>
+        </div>
+       
+        <div class="form-container">
+            <h3>Atividade de Leitura e Escrita</h3>
+            <p>Avaliação de Analfabetismo Funcional (0 a 10)</p>
+           
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p class="progress-text" id="progressText">Questão 1 de 10</p>
+           
+            <form id="evaluationForm">
+                <!-- Nível 0-1 -->
+                <div class="question-group">
+                    <div class="level-title">Nível 0 – 1 (reconhecimento básico)</div>
+                    <div class="question-text">1. Você consegue ler esta palavra: casa?</div>
+                    <select class="answer-input" name="q1" required>
+                        <option value="">Selecione</option>
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+                   
+                    <div class="question-text">2. Você consegue escrever seu nome completo?</div>
+                    <input type="text" class="answer-input" name="q2" placeholder="Digite seu nome completo" required>
+                </div>
+               
+                <!-- Nível 2-3 -->
+                <div class="question-group">
+                    <div class="level-title">Nível 2 – 3 (leitura simples)</div>
+                    <div class="question-text">3. Leia esta frase: "O gato dorme na cama." — O que está acontecendo na frase?</div>
+                    <input type="text" class="answer-input" name="q3" placeholder="Sua resposta" required>
+                    <div class="question-text">4. Diga os números que aparecem aqui: 7, 12, 25.</div>
+                    <input type="text" class="answer-input" name="q4" placeholder="Digite os números" required>
+                </div>
+               
+                <!-- Nível 4-5 -->
+                <div class="question-group">
+                    <div class="level-title">Nível 4 – 5 (interpretação básica)</div>
+                    <div class="question-text">5. Leia: "O ônibus passa às 14h30." — Que horas o ônibus vai passar?</div>
+                    <input type="text" class="answer-input" name="q5" placeholder="Sua resposta" required>
+                    <div class="question-text">6. Em um rótulo de comida, se está escrito: "Válido até 10/11/2025", o que significa?</div>
+                    <input type="text" class="answer-input" name="q6" placeholder="Sua resposta" required>
+                </div>
+               
+                <!-- Nível 6-7 -->
+                <div class="question-group">
+                    <div class="level-title">Nível 6 – 7 (aplicação prática)</div>
+                    <div class="question-text">7. Leia este pequeno bilhete: "Maria, compre pão e leite no mercado." — O que Maria deve comprar?</div>
+                    <input type="text" class="answer-input" name="q7" placeholder="Sua resposta" required>
+                    <div class="question-text">8. Se no caixa do mercado a conta deu R$ 18,50 e você entregou uma nota de R$ 20, quanto deve receber de troco?</div>
+                    <input type="text" class="answer-input" name="q8" placeholder="Sua resposta" required>
+                </div>
+               
+                <!-- Nível 8-9 -->
+                <div class="question-group">
+                    <div class="level-title">Nível 8 – 9 (interpretação de texto simples)</div>
+                    <div class="question-text">9. Leia: "Aviso: A escola estará fechada amanhã para manutenção elétrica. As aulas voltarão na quinta-feira." — Em qual dia as aulas voltam?</div>
+                    <input type="text" class="answer-input" name="q9" placeholder="Sua resposta" required>
+                </div>
+               
+                <!-- Nível 10 -->
+                <div class="question-group">
+                    <div class="level-title">Nível 10 (interpretação mais complexa)</div>
+                    <div class="question-text">10. Leia o pequeno texto: "O consumo excessivo de açúcar pode causar problemas de saúde, como obesidade e diabetes. Por isso, é importante manter uma alimentação equilibrada." — Por que devemos evitar o consumo excessivo de açúcar?</div>
+                    <textarea class="answer-input" name="q10" rows="3" placeholder="Sua resposta" required></textarea>
+                </div>
+               
+                <button type="submit" class="btn">Finalizar Avaliação</button>
+            </form>
+        </div>
+    </div>
+    <script src="assets/script/formulario.js"></script>
+</body>
+</html>
